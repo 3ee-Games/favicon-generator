@@ -1,26 +1,29 @@
 (lang dune 3.20)
 
-(name favicon-gen)
+(name favicon-generator)
 
 (generate_opam_files true)
 
 (source
- (github username/reponame))
+ (github 3ee-Games/favicon-generator))
 
-(authors "Author Name <author@example.com>")
+(authors "Ryan Sadwick <rsadwick@gmail.com>")
 
-(maintainers "Maintainer Name <maintainer@example.com>")
+(maintainers "Ryan Sadwick <rsadwick@gmail.com>")
 
-(license LICENSE)
+(license MIT)
 
-(documentation https://url/to/documentation)
+(documentation https://github.com/3ee-Games/favicon-generator#readme)
 
 (package
- (name favicon-gen)
- (synopsis "A short synopsis")
- (description "A longer description")
- (depends ocaml)
+ (name favicon-generator)
+ (synopsis "Generate and manage favicons from a single source image")
+ (description "generate multi-size favicon sets and manifest metadata for web projects.")
+ (depends
+  (ocaml (>= 5.1))
+  dune
+  cmdliner
+  unix
+  base)
  (tags
-  ("add topics" "to describe" your project)))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
+  ("favicon" "image" "generator" "web" "cli" "ocaml")))
